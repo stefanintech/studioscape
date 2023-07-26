@@ -1,5 +1,5 @@
 # <a target="_blank" href="#">StudioScape</a> 🎨🎭
-<a href="#" target="_blank"><img src="#"></a>
+<a href="#" target="_blank"><img src="https://github.com/codewithfan/studioscape/blob/main/src/assets/gif/working-on-it.gif"></a>
 
 StudioScape is a responsive booking application, tailored specifically for creators and artists seeking inspiring spaces for their endeavors. Built with React, our platform ensures a seamless, intuitive, and fast user experience across all devices. With StudioScape, find the perfect studio or event space that fuels your creativity, and book with just a few taps.
 
