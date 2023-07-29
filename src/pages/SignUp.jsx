@@ -2,6 +2,7 @@ import { useState } from "react"
 import {toast} from 'react-toastify'
 import {Link, useNavigate} from 'react-router-dom'
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
+import OAuth from "../components/OAuth";
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
 import {db} from '../firebase.config'
 import {ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
@@ -79,7 +80,7 @@ function SignUp() {
                     </div>
                 </form>
 
-                {/* Google OAuth component */}
+                <OAuth />
 
                 <Link to='/sign-in' className="registerLink">
                     Sign In Instead
