@@ -6,7 +6,6 @@ import {
   query,
   orderBy,
   limit,
-  getDoc,
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -49,8 +48,8 @@ function Slider() {
     return <Spinner />;
   }
 
-  if(listings.length === 0) {
-    return <></>
+  if (listings.length === 0) {
+    return <></>;
   }
 
   return (
@@ -65,7 +64,7 @@ function Slider() {
           keyboard={{
             enabled: true,
           }}
-          pagination={{ type: 'progressbar' }}
+          pagination={{ type: "progressbar" }}
           className="mySwiper"
         >
           {listings.map(({ data, id }) => (
@@ -82,8 +81,11 @@ function Slider() {
                 className="swiperSlideDiv"
               >
                 <p className="swiperSlideText">{data.name}</p>
-                <p className="swiperSlidePrice">${data.discountedProce ?? data.regularPrice}{''}
-                {data.type === 'rent' && '/ day'}</p>
+                <p className="swiperSlidePrice">
+                  ${data.discountedProce ?? data.regularPrice}
+                  {""}
+                  {data.type === "rent" && "/ day"}
+                </p>
               </div>
             </SwiperSlide>
           ))}

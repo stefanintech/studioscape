@@ -6,12 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import {
-  doc,
-  updateDoc,
-  getDoc,
-  serverTimestamp,
-} from "firebase/firestore";
+import { doc, updateDoc, getDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useNavigate, useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
@@ -19,6 +14,7 @@ import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 
 function EditListing() {
+  // eslint-disable-next-line
   const [geolocationEnabled, setGetGeolocationEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [listing, setListing] = useState(false);
@@ -185,6 +181,8 @@ function EditListing() {
               case "running":
                 console.log("Upload is running");
                 break;
+                default:
+                  break
             }
           },
           (error) => {
@@ -220,8 +218,8 @@ function EditListing() {
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
     // update listing
-    const docRef = doc(db, 'listings', params.listingId)
-    await updateDoc(docRef, formDataCopy)
+    const docRef = doc(db, "listings", params.listingId);
+    await updateDoc(docRef, formDataCopy);
     setLoading(false);
     toast.success("Listing edited");
     navigate(`/category/${formDataCopy.type}/${docRef.id}`);
