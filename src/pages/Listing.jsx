@@ -46,9 +46,12 @@ function Listing() {
     <main>
       {listing && listing.imgUrls && (
         <Swiper
-          slidesPerView={1}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-        >
+        slidesPerView={1}
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+      >
           {listing.imgUrls.map((url, index) => (
             <SwiperSlide key={index}>
               <div
